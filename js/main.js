@@ -1,26 +1,20 @@
-// const unwantedNames = ['Дима', 'Саша', 'Ольга', 'Никита'];
-// //let lastName = ['Никита', 'Саша', 'Анастасия', 'Дима', 'Катя', 'Лера'];
+function differenceArray(firstArray, secondArray) {
+    let sumFirstArray = 1;
+    let sumSecondArray = 1;
 
-// for (let i = 0; i < unwantedNames.length; i++) {
-//     let pos = lastName.indexOf(unwantedNames[i]);
-//     if (pos != -1) {
-//         lastName.splice(pos, 1);
-//     }
-// }
-// console.log(lastName);
-
-function selectionName(lastName) {
-    const unwantedNames = ['Дима', 'Саша', 'Ольга', 'Никита'];
-    
-    for (let i = 0; i < unwantedNames.length; i++) {
-        let pos = lastName.indexOf(unwantedNames[i]);
-        if (pos != -1) {
-            lastName.splice(pos, 1);
-        }
+    for (let i = 0; i < firstArray.length; i++) {
+        sumFirstArray *= firstArray[i];
     }
-    console.log(lastName);
+    for (let i = 0; i < secondArray.length; i++) {
+        sumSecondArray *= secondArray[i];
+    }
+    
+    let difference = sumFirstArray - sumSecondArray;
+    console.log(difference);
 }
 
-selectionName(['Никита', 'Саша', 'Анастасия', 'Дима', 'Катя', 'Лера']);
-selectionName(['Алексей', 'Семён', 'Василиса', 'Дима', 'Максим', 'Ольга',]);
-selectionName(['Алишер', 'Ольга']);
+differenceArray([3,2,5],[1,4,4]);
+differenceArray([9,7,2], [5,2,2]);
+differenceArray([11,2,5], [1,10,8]);
+differenceArray([4,4,7], [3,9,3]);
+differenceArray([15,20,25], [10,30,25]);
